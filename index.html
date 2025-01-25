@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryxen OS</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #taskbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background: rgba(12, 12, 12, 0.488); /* Light transparent white */
+            border-radius: 15px 15px 0 0; /* Rounded top corners */
+            backdrop-filter: blur(15px); /* Apply blur to background */
+            -webkit-backdrop-filter: blur(15px); /* Safari support */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+
+        .taskbar-icon {
+            margin: 0 15px;
+            width: 24px; /* Adjust icon size */
+            height: 24px; /* Adjust icon size */
+        }
+
+        .taskbar-icon img {
+            width: 100%; /* Ensure the image fills the div */
+            height: 100%; /* Ensure the image fills the div */
+            object-fit: contain; /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+<body>
+    <!-- Video Background -->
+    <div id="video-background">
+        <video autoplay muted loop id="bg-video" playsinline>
+            <source src="https://files.catbox.moe/1x14w9.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    
+    <div id="desktop"></div>
+
+    <!-- Taskbar -->
+    <div id="taskbar">
+        <div class="taskbar-icon" id="taskbarBtn1">
+            <img src="firefox.png" alt="App 1">
+        </div>
+        <div class="taskbar-icon" id="taskbarBtn2">
+            <img src="settings.png" alt="App 2">
+        </div>
+        <div class="taskbar-icon" id="taskbarBtn3">
+            <img src="terminal.png" alt="App 3">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
